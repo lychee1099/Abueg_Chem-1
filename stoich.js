@@ -145,7 +145,7 @@ async function updatePreview() {
     if (element_for_CI == element_for_CI_2) {
         if (starting_unit == "grams") {
             if (ending_unit == "mol") {
-                result_ = convertGramsToMol(rawInput, result.mw);
+                result_ = convertToLatexSciNotation(convertGramsToMol(rawInput, result.mw));
                 ansLatex = `Answer: ${result_}~mol~${element}`;
 
                 // grams * (mol / grams)
@@ -171,7 +171,7 @@ async function updatePreview() {
             }
         } else if (starting_unit == "mol") {
             if (ending_unit == "grams") {
-                result_ = convertMolToGrams(rawInput, result.mw);
+                result_ = convertToLatexSciNotation(convertMolToGrams(rawInput, result.mw));
                 ansLatex = `Answer: ${result_}~g~${element}`;
 
                 // mol * (g/mol)
@@ -181,7 +181,7 @@ async function updatePreview() {
                 good_input = true;
 
             } else if (ending_unit == "atoms/molecules") {
-                result_ = convertMolToAmount(rawInput);
+                result_ = convertToLatexSciNotation(convertMolToAmount(rawInput));
                 ansLatex = `Answer: ${result_}~atoms/molecules~${element}`;
 
                 // mol * (avo/mol)
@@ -197,7 +197,7 @@ async function updatePreview() {
             }
         } else if (starting_unit == "atoms/molecules") {
             if (ending_unit == "grams") {
-                result_ = convertAmountToGrams(rawInput, result.mw);
+                result_ = convertToLatexSciNotation(convertAmountToGrams(rawInput, result.mw));
                 ansLatex = `Answer: ${result_}~g~${element}`;
 
                 // amount * (mol / avogadro) * (g/mol)
@@ -209,7 +209,7 @@ async function updatePreview() {
                 good_input = true;
 
             } else if (ending_unit == "mol") {
-                result_ = convertAmountToMol(rawInput);
+                result_ = convertToLatexSciNotation(convertAmountToMol(rawInput));
                 ansLatex = `Answer: ${result_}~mol~${element}`;
 
                 // amount * (mol / avogadro)
@@ -237,10 +237,9 @@ async function updatePreview() {
         }
 
         if (element.includes(element_2) && element_2 in atoms_dict) {
+            good_input = true;
+            var ratio = atoms_dict[element_2];
             if (starting_unit == "grams") {
-                good_input = true;
-                var ratio = atoms_dict[element_2];
-
                 if (ending_unit == "mol") {
                     result_ = convertGramsToAmount(rawInput, result.mw);
                     result_ = convertMolecToItsAtoms(result_, ratio);

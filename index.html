@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Chem 1 Calculator</title>
 
-  <link rel="stylesheet" href="./basic_stoich.css">
+  <link rel="stylesheet" href="./stoich.css">
 
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -15,7 +15,6 @@
 <body>
     <div class="whole_wrapper">
         <h1>Stoichiometry Conversion</h1>
-        <hr>
         <label for="input_text">From: </label>
         <input type="text" id="input_text" placeholder="Value">
         <select id="start_unit">
@@ -42,8 +41,8 @@
                 <p id="preview_text"></p>
             </div>
         </div>
+        <hr>
     </div>
-    <br>
     <div class="whole_wrapper">
         <h2>How this works</h2>
         <p>Enter the needed values for the amount, units, and what elements or molecules to convert from and to.
@@ -51,13 +50,16 @@
             with different units, or from a molecule to an atom that it has. Converting from one molecule or atom to
             another is not yet possible since a balanced chemical equation is needed.
         </p>
+        <p>For exponents, kindly use the "^" symbol and encase the power with parentheses. 
+            Example: 10^(23), 6.022*10^(23)</p>
         <hr>
         <h2>About</h2>
         <p>Made by Jezic Abueg for a creative output in Chem 1-X1 Midyear 2025</p>
-        <p>Check this link for the documentation and files: <a>www</a> </p>
+        <p>Check this link for the documentation and files: <a href="https://github.com/lychee1099/Abueg_Chem-1" target="_blank">
+            https://github.com/lychee1099/Abueg_Chem-1</a></p>
     </div>
 
     <script type="text/javascript" src="./chemcalc.js"></script>
-    <script src="./basic_stoich.js"></script>
+    <script src="./stoich.js"></script>
 </body>
 </html>

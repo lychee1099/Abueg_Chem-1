@@ -1,8 +1,10 @@
 body {
     background-image: url("bg.jpg");
     background-size: cover;
-    background-color: rgba(255, 255, 255, 0.249);
+    background-color: rgba(255, 255, 255, 0.282);
     background-blend-mode: lighten;
+
+    font-family: "Inter", sans-serif;
 }
 
 .preview {
@@ -22,7 +24,6 @@ body {
 .whole_wrapper {
     margin: auto;
     width: 75%;
-    border: 3px solid red;
     padding: 10px;
 }
 

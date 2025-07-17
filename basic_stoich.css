@@ -1,0 +1,41 @@
+body {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.249);
+    background-blend-mode: lighten;
+}
+
+.preview {
+    width: 95%;
+    height: auto;
+    margin: 10px;
+    border-radius: 25px;
+    border: 2px solid gray;
+    background-color: rgba(255, 255, 255, 0.504);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.whole_wrapper {
+    margin: auto;
+    width: 75%;
+    border: 3px solid red;
+    padding: 10px;
+}
+
+#preview_text_wrapper {
+    display: inline-block;
+    transform-origin: center center;
+    white-space: normal;
+}
+
+#preview_text {
+    text-align: center;
+}
+
+.error {
+    background-color: rgb(193, 90, 90);
+}
